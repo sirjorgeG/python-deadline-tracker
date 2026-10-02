@@ -1,0 +1,11 @@
+
+# Local database credentials
+db_config.py
+
+# Python-generated files
+__pycache__/
+*.pyc
+
+# Local environment files
+.env
+.venv/
