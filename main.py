@@ -5,6 +5,9 @@
 import mysql.connector
 import db_config
 
+# Import date handling
+from datetime import date
+
 
 
 # Connect the Python application to MySQL
@@ -69,9 +72,30 @@ def view_tasks():
         print("Task:", task[1])
         print("Description:", task[2])
         print("Deadline:", task[3])
-        print("Status:", task[4])
-        print("------------------------------")
+ 
+        # Calculate the number of days until the deadline
+        deadline = task[3]
+        today = date.today()
 
+        days_remaining = (deadline - today).days
+
+        print("Days remaining:", days_remaining)
+
+        # Check the deadline status
+        if days_remaining < 0:
+            print("Deadline warning: OVERDUE")
+
+        elif days_remaining == 0:
+            print("Deadline warning: DUE TODAY")
+
+        elif days_remaining <= 7:
+            print("Deadline warning: DEADLINE APPROACHING")
+
+        else:
+            print("Deadline warning: NORMAL")
+
+        print("Status:", task[4])
+        print("--------------------------------")
 
 # Keep the program running
 while True:
