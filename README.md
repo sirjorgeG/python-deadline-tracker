@@ -27,6 +27,32 @@ The purpose of this project was to improve my Python programming, database manag
 - phpMyAdmin and XAMPP
 - Git and GitHub Desktop
 - Trello for project planning
+## Installation and Setup
+
+1. Install Python and MySQL. XAMPP and phpMyAdmin can be used to manage the local database.
+2. Download or clone this GitHub repository.
+3. Open the project folder in Visual Studio Code.
+4. Install the required Python packages:
+
+   `python -m pip install -r requirements.txt`
+
+5. Start the MySQL server.
+6. Create a database named `deadline_tracker` and a table named `tasks` using the SQL database setup script.
+7. Create a local `db_config.py` file containing the following settings:
+
+   ```python
+   DB_HOST = "127.0.0.1"
+   DB_USER = "your_mysql_username"
+   DB_PASSWORD = "your_mysql_password"
+   DB_NAME = "deadline_tracker"
+   ```
+
+8. Replace the example username and password with your local MySQL credentials.
+9. Run the application:
+
+   `python main.py`
+
+The `db_config.py` file is excluded from GitHub through `.gitignore` to avoid publishing local database credentials.
 
 ## How the Application Works
 
